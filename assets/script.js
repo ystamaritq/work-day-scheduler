@@ -51,7 +51,7 @@ $(document).ready(function () {
   width: 100px;"><i class="fas fa-thumbtack"
       aria-hidden="true"></i></button></td></tr>`);
 	});
-
+	//test the save button
 	$(".save_btn").on("click", function () {
 		alert($(this).attr("data-hour"));
 	});

@@ -69,10 +69,11 @@ $(document).ready(function () {
 			$(this).attr("data-textareaId") === $(".textareaClass").attr("dataID")
 		) {
 			var textareaInput = $(".textareaClass").val();
-			console.log(
-				"the test to see if the event change is get by " + textareaInput
-			);
-			$(".textareaClass").attr(attr("disabled", "disabled"));
+			if (textareaInput !== "") {
+				$(".textareaClass").attr("disabled", "disabled");
+			} else {
+				textareaInput = $(".textareaClass").val();
+			}
 		}
 	});
 });

@@ -36,3 +36,5 @@ var calendarData = [
 		event: "empty",
 	},
 ];
+
+$(document).ready(function () {});

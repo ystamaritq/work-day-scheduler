@@ -46,6 +46,7 @@ var calendarData = [
 	},
 ];
 
+//getting the localStorage key values
 if (localStorage.getItem("calendarData") !== null) {
 	calendarData = JSON.parse(localStorage.getItem("calendarData"));
 }
@@ -73,8 +74,6 @@ $(document).ready(function () {
 			styleClass = "past";
 		}
 
-		debugger;
-
 		tbody.append(`
         <tr class="rowClass"">
 			<th style="background-color: whitesmoke; border-right: 3px solid teal; vertical-align: middle;">
@@ -96,12 +95,9 @@ $(document).ready(function () {
 	 * save event target the specific id from the button
 	 * and using this id to get the textarea associatte with it
 	 */
-
 	function saveEvent() {
-		//save the set value(s) to the localStorage
-
 		textareaId = $(this).attr("data-ref");
-		valueAttr = $("#" + textareaId).val();
+		var valueAttr = $("#" + textareaId).val();
 
 		calendarData.forEach((timeblok) => {
 			if (timeblok.id == textareaId) {
@@ -109,6 +105,7 @@ $(document).ready(function () {
 			}
 		});
 
+		//save the set value(s) to the localStorage using JSON.stringify("object...")
 		localStorage.setItem("calendarData", JSON.stringify(calendarData));
 	}
 });

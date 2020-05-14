@@ -64,14 +64,11 @@ $(document).ready(function () {
 	//target tbody to manipulate the table rows ... and more
 	var tbody = $("#calendar-content");
 
-	$(".rowClass .present").css("background-color", "red");
-	$(".rowClass .past").css("background-color", "grey");
-	$(".rowClass .future").css("background-color", "green");
-
 	//creating for each object(entry) of the array calendarData appending the rows and th,td, buttons
 	calendarData.forEach((entry) => {
-		var styleClass = "normal";
 		var currentHour = moment().hour();
+
+		var styleClass = "";
 
 		if (currentHour === entry.id) {
 			styleClass = "present";
@@ -82,11 +79,11 @@ $(document).ready(function () {
 		}
 
 		tbody.append(`
-        <tr class="rowClass" data-hour="${entry.hour}">
+        <tr class="rowClass"">
          <th style="background-color: whitesmoke; border-right: 3px solid teal; vertical-align: middle;">${entry.hour}</th>
           <td class="pl-0 ${styleClass}" style="width: 780px;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;">
-          <textarea style="width: 100%; padding-top: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 80px; border-left: 0px;" value="${entry.event}" dataId= "${entry.id}" class="textareaClass"/></td>
-            <td class="pt-0 pb-0 pl-0"><button data-hour="${entry.hour}" data-textareaId ="${entry.id}" class="save_btn btn btn-lg bg-info text-white btn-outline-info waves-effect" style= "height: 80px; width: 100px;"><i class="fas fa-thumbtack" aria-hidden="true"></i></button></td>
+          <textarea style="width: 100%; padding-top: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 80px; border-left: 0px;" value="${entry.event}" dataId= "${entry.id}" class="textareaClass description"/></td>
+            <td class="pt-0 pb-0 pl-0"><button data-hour="${entry.hour}" data-textareaId ="${entry.id}" class="saveBtn btn btn-lg bg-info text-white btn-outline-info waves-effect" style= "height: 80px; width: 100px;"><i class="fas fa-thumbtack" aria-hidden="true"></i></button></td>
 		</tr>`);
 	});
 
@@ -96,7 +93,7 @@ $(document).ready(function () {
 	 */
 
 	//TODO: the block timeblock when is past save button event
-	$(".save_btn").on("click", function () {
+	$(".saveBtn").on("click", function () {
 		if (
 			$(this).attr("data-textareaId") === $(".textareaClass").attr("dataID")
 		) {

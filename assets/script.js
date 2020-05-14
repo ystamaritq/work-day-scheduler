@@ -56,14 +56,26 @@ $(document).ready(function () {
 	//creating for each object(entry) of the array calendarData appending the rows and th,td, buttons
 	calendarData.forEach((entry) => {
 		tbody.append(`
-        <tr style="background-color: lightgray;">
+        <tr class="rowClass" data-hour="${entry.hour}" style="background-color: lightgray;">
          <th style="background-color: whitesmoke; border-right: 3px solid teal; vertical-align: middle;">${entry.hour}</th>
           <td class="pl-0" style="width: 780px;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;">
           <textarea  style="width: 100%; padding-top: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 80px; border-left: 0px;" value="${entry.event}" dataId= "${entry.id}" class="textareaClass"/></td>
             <td class="pt-0 pb-0"><button data-hour="${entry.hour}" data-textareaId ="${entry.id}" class="save_btn btn btn-lg bg-info text-white btn-outline-info waves-effect" style= "height: 80px; width: 100px;"><i class="fas fa-thumbtack" aria-hidden="true"></i></button></td>
-        </tr>`);
+		</tr>`);
+
+		if (moment().format("ha") !== entry.hour) {
+			$(".rowClass").css("background-color", "red");
+			// } else if (moment().format("ha") > $(".rowClass").attr("data-hour")) {
+			// 	console.log("the time past lets wait");
+		}
 	});
-	//test the save button
+
+	/**
+	 * Develop the functionality to handle the color in each timeblock
+	 * to indicate whether it is in the past, present, or future.
+	 */
+
+	//TODO: the block timeblock when is past save button event
 	$(".save_btn").on("click", function () {
 		if (
 			$(this).attr("data-textareaId") === $(".textareaClass").attr("dataID")

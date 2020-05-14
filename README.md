@@ -1,6 +1,6 @@
-# work-day-scheduler
+# Work day Scheduler
 
-`This project hosts the source code for my Work Day Scheduler. A simple calendar application that allows the user to save events for each hour of the day.`
+This project hosts the source code for my Work Day Scheduler. A simple calendar application that allows the user to save events for each hour of the day.
 
 ### The following animation demonstrates the application functionality:
 

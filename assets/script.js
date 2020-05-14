@@ -74,17 +74,21 @@ $(document).ready(function () {
 			 ${entry.hour}
 			</th>
         	<td class="pl-0 ${styleClass}" style="width: 780px;padding-top: 0px;padding-bottom: 0px;padding-right: 0px;">
-				<textarea id="${entry.id}" style="width: 100%; padding-top: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 80px; border-left: 0px;" value="${entry.event}" id="myText" class="textareaClass description"/>
+				<textarea id="text-${entry.id}" style="width: 100%; padding-top: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 80px; border-left: 0px;" value="${entry.event}" id="myText" class="textareaClass description"/>
 			</td>
 			<td class="pt-0 pb-0 pl-0">
-				<button data-ref="${entry.id}" class="saveBtn btn btn-lg bg-info text-white btn-outline-info waves-effect" style= "height: 80px; width: 100px;"><i class="fas fa-thumbtack" aria-hidden="true"></i></button>
+				<button data-ref="text-${entry.id}" class="saveBtn btn btn-lg bg-info text-white btn-outline-info waves-effect" style= "height: 80px; width: 100px;"><i class="fas fa-thumbtack" aria-hidden="true"></i></button>
 			</td>
 		</tr>`);
 	});
 
-	//TODO: the block timeblock when is past save button event
+	// save button event
 	$(".saveBtn").on("click", saveEvent);
 
+	/**
+	 * save event target the specific id from the button
+	 * and using this id to get the textarea associatte with it
+	 */
 	function saveEvent() {
 		textareaId = $(this).attr("data-ref");
 		var eventText = $("#" + textareaId).val();

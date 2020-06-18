@@ -2,7 +2,7 @@
 
 This project hosts the source code for my Work Day Scheduler. A simple calendar application that allows the user to save events for each hour of the day.
 
-### The following animation demonstrates the application functionality:
+### The following image demonstrates the application functionality:
 
 ![work-day-scheduler](./assets/img/ex1.png)
 
@@ -41,6 +41,12 @@ Below is a summary of the key files for this project and their purpose:
 ## Features
 
 In this work day scheduler the current day is displayed at the top of the calendar. You can create a event during the regular working hours from 9:00 AM to 5:00 PM. If the event is in the past hours the time block will be gray, if the event is in the current hour the time block will be red , or if the event is in the future the time block will be green.
+
+## Links
+
+[Deployed link: Try it out!](https://ystamaritq.github.io/work-day-scheduler/) </div>
+
+[GitHub link](https://github.com/ystamaritq/work-day-scheduler) </div>
 
 ## Licensing
 

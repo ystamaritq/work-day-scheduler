@@ -2,10 +2,6 @@
 
 This project hosts the source code for my Work Day Scheduler. A simple calendar application that allows the user to save events for each hour of the day.
 
-### The following image demonstrates the application functionality:
-
-![work-day-scheduler](./assets/img/ex1.png)
-
 ## Installing / Getting Started
 
 To test this project, simply clone project into a your local file system and open `index.html` in your favorite browser.
@@ -30,13 +26,44 @@ Below is a summary of the key files for this project and their purpose:
 - **index.html** work-day-scheduler html page
 - **assets** folder that contains all files
 - **assets/js/script.js** javascript files
-- **assets/img/..** images used by the page
+- **assets/gif/..** animation used by the readme
 - **assets/css/style.css** main site custom stylesheet
 
 ## Additional Libraries:
 
 - **Bootstrap**
 - **jQuery**
+- **Moment.js**
+
+## User Story
+
+```
+AS AN employee with a busy schedule
+I WANT to add important events to a daily planner
+SO THAT I can manage my time effectively
+```
+
+## Acceptance Criteria
+
+```
+GIVEN I am using a daily planner to create a schedule
+WHEN I open the planner
+THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+THEN I am presented with timeblocks for standard business hours
+WHEN I view the timeblocks for that day
+THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+WHEN I click into a timeblock
+THEN I can enter an event
+WHEN I click the save button for that timeblock
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist
+```
+
+### The following animation demonstrates the application functionality:
+
+![day planner demo](./assets/gif/planner.gif)
 
 ## Features
 
